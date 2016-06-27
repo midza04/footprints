@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html style="">
+<head>
+
+	<title>Footprints</title>
+	<link rel="stylesheet" href="css/material.css"/>
+	<link rel="stylesheet" href="css/material.css"/>
+	<link rel="stylesheet" href="demo-files/demo.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="Material Framework is an easy to use Material Design Framework for the web.">
+	<meta charset="utf-8"/>
+	<script src="js/material.js"></script>
+    <script src="demo-files/demo.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js" async></script>
+	<link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+	<script src="js/custom.js"></script>
+    <script src="js/index.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKiEsWOBWvS9Uuy1ash9R5CeHgux-KVMk&callback=initMap"
+    async defer></script>
+
+
+
+
+	<script type="text/javascript">
+
+
+		function eventPage() {
+			window.location="index.html";
+		}
+	</script>
+
+
+	<body>
+	<div  style="background-color:#000066;" class="toolbar bg-blue-500 color-white">
+				<button class="icon-button" id="sidemenu-button" class="button color-blue-500" onclick="eventPage();"><i class="icon-arrow-back"></i></button>
+				<span class="toolbar-label">Longcheng Plaza</span>
+				<span class="float-right">
+					<button class="icon-button"><i class="icon-more-vertical"></i></button>
+				</span>
+			</div>
+
+<script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('geolocation'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    
+
+
+
+
+
+
+			
+  <div id="geolocation">
+  <style>
+  #geolocation{background: transparent url(img/default.gif) no-repeat center center;
+  		width: 100%;
+  		height: 300px;
+  		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  		margin: 10px;
+  }
+  .placeinfo
+  {
+  	 
+  	margin:0 auto;
+        centered content
+  	width: 30%;
+  	margin: 10px;
+  	height: 100px;
+  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  }
+  </style>
+  </div>
+  <div class="placeinfo">
+  </div>
+</body>
+
+
+</html>

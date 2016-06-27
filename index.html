@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Parallax Template - Materialize</title>
+
+
+
+
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:400'>
+    <link rel='stylesheet prefetch' href='css/waves.min.css'>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/stylee.css">
+
+
+    <script src="js/jquery-1.12.3.min.js"></script>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+
+
+</head>
+<body>
+<script src="js/jquery-1.12.3.min.js"></script>
+
+
+
+<div  style="background-color:#000066;" class="toolbar bg-blue-500 color-white">
+    <a href="#" class="button-collapse"> <button  style="color:white;" class="icon-button" id="" class="button color-blue-500" onclick="eventPage();"><i class="icon-menu"></i></button></a>
+    <span class="toolbar-label">FootPrints</span>
+				<span class="float-right">
+
+                    <button onclick="reload();" class="icon-button"><i class="icon-more-vertical"></i></button></span>
+
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+        <li   onclick="logout();"><a style="color:#000066;" href="#">Logout</a></li>
+    </ul>
+</div>
+
+
+
+<div class="row">
+    <div class="col s12">
+        <ul style="color: #0d47a1;" class="tabs">
+            <li style="color: #0d47a1;" class="tab col s3"><a href="#test1">PLACES</a></li>
+            <li class="tab col s3"><a class="active" href="#test2">TRENDING</a></li>
+            <li class="tab col s3"><a href="#test3">NEARBY</a></li>
+
+        </ul>
+    </div>
+    <div id="test1" class="col s12">
+
+        <script>
+
+            $(document).ready(function(){
+                // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
+            });
+
+
+        </script>
+
+
+            <div style="margin-top: 40px; margin-left: 20%;">
+                <script type="text/javascript">
+
+
+                    function mall() {
+                        window.location="find.html";
+                    }
+                    function school() {
+                        window.location="find4.html";
+                    }
+                    function bank() {
+                        window.location="find3.html";
+                    }
+                    function medical() {
+                        window.location="find2.html";
+                    }
+                    function sport() {
+                        window.location="find5.html";
+                    }
+                    function dinner() {
+                        window.location="find6.html";
+                    }
+                    function coffee() {
+                        window.location="find6.html";
+                    }
+                    function map() {
+                        window.location="map.html";
+                    }
+                </script>
+            <table style="width:100%">
+                <tr>
+
+
+                    <td onclick="mall();"><img src="img/shop.png" height="54px" width="44px"><br>Malls</td>
+                    <td onclick="bank();"><img src="img/bank.png" height="54px" width="44px"><br>Banks</td>
+                    <td onclick="medical();"><img src="img/medic.png" height="54px" width="44px"><br>Medical</td>
+
+                </tr>
+                <tr>
+                    <td onclick="school();"><img src="img/school.png" height="54px" width="44px"><br>School</td>
+                    <td onclick="sport();"><img src="img/bar.png" height="54px" width="44px"><br>Sport</td>
+                    <td onclick="mall();"><img src="img/mall.png" height="54px" width="44px"><br>Shopping</td>
+
+                </tr>
+                <tr>
+                    <td onclick="dinner();"><img src="img/lunch.png" height="54px" width="44px"><br>Dinner</td>
+                    <td onclick="dinner();"><img src="img/coffee.png" height="54px" width="44px"><br>Coffee</td>
+                    <td onclick="dinner();"><img src="img/dinner.png" height="54px" width="44px"><br>Dinner</td>
+                </tr>
+            </table>
+                </div>
+
+
+
+
+
+
+
+
+
+        <button  onclick="map();"style="position:fixed; z-index:11; right:0px; bottom:0; margin:20px; padding:5 px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" class="fab bg-blue-700 color-white"><i class="icon-place"></i></button>
+
+
+
+    </div>
+
+
+
+    <div id="test2" class="col s12">
+
+
+
+                     <div style="width: 95%; margin-left: 10px; margin-right: 10px; background: transparent url(img/p1.gif) no-repeat center center;" class="card rich-card">
+                    <div class="card-hero" id="img">
+                   <h1 id="name1" ><br><span id="venue1" style="color: red;"></span><br></h1>
+                <label id="myrating" class="bottomright"></label>
+            </div>
+
+            <div class="divider"></div>
+            <div class="card-footer">
+		<span id="date1" class="date" style="margin-left: 20px;"></span><br>
+			<span id="month1" style="margin-left: 20px; padding-right:20px; color: red;"></span>
+		<button  onclick="moreInfo();" class="button flat color-orange-500">Interested</button>
+                <button onclick="direct();" style="color: #000066;" class="icon-button"><i class="icon-directions"></i></button>
+             <script>
+                 function moreInfo() {
+                     window.location="fullevent.html";
+                 }
+
+                 function direct() {
+                     window.location="directions.html";
+                 }
+
+
+             </script>
+
+
+
+            </div>
+        </div>
+
+
+
+        <div  style="width: 95%; margin-left: 10px; margin-right: 10px;" class="card rich-card">
+            <div  style= "background: transparent url(img/p1.gif) no-repeat center center;" class="card-hero" id="img2">
+                <script type="text/javascript">
+                $(document).ready(function()
+                {
+
+                $.getJSON("http://footprintsapp.3eeweb.com/eventjson2.php" ,function(data)
+
+                {
+
+
+                $.each(data.result , function()
+                {
+
+                $("#date2").append("<span>"+this['event_day']+"</span>");
+                $("#month2").append("<span>"+this['event_month']+"</span>");
+                $("#name2").append("<span>"+this['event_name']+"</span>");
+                $("#venue2").append("<span>"+this['venue_name']+"</span>");
+                $("#img2").append('<img src="http://footprintsapp.3eeweb.com/image/image/'+this['image']+'"    width="100%" height="100%"/>');
+
+                });
+
+                });
+
+                });
+                </script>
+
+
+                <h1 id="name2" ><br><span id="venue2" style="color: red;"></span><br></h1>
+            </div>
+            <div class="divider"></div>
+            <div class="card-footer">
+                <span id="date2" class="date" style="margin-left: 20px;"></span><br>
+                <span id="month2" style="margin-left: 20px; padding-right:20px; color: red;"></span>
+                <button  onclick="moreInfo(); fullevent();" class="button flat color-orange-500">Interested</button>
+                <button onclick="direct();" style="color: #000066;" class="icon-button"><i class="icon-directions"></i></button>
+                <script>
+                    function moreInfo() {
+                        window.location="fullevent.html";
+
+
+
+
+                    }
+
+                </script>
+
+
+
+            </div>
+
+
+            </div>
+
+
+        <div  style="width: 95%; margin-left: 10px; margin-right: 10px;" class="card rich-card">
+
+            <div  class="card-hero" id="img3">
+
+
+
+
+                <h1 id="name2" ><br><span id="venue3" style="color: red;"></span><br></h1>
+            </div>
+            <div class="divider"></div>
+            <div class="card-footer">
+                <span id="date31" class="date" style="margin-left: 20px;"></span><br>
+                <span id="month3" style="margin-left: 20px; padding-right:20px; color: red;"></span>
+                <button  onclick="moreInfo(); " class="button flat color-orange-500">Interested</button>
+                <button onclick="direct();" style="color: #000066;" class="icon-button"><i class="icon-directions"></i></button>
+
+
+
+
+
+                <script>
+                    function serchevent() {
+                        window.location="search.html";
+                    }
+
+                </script>
+
+
+
+
+
+
+                <button   onclick="serchevent();"style="position:fixed; z-index:11; right:0px; bottom:0; margin:20px; padding:5 px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" class="fab bg-blue-700 color-white  btn modal-trigger"><i class="icon-search"></i></button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+<div id="test3" class="col s12">
+
+    <script>
+
+        $(document).ready(function()
+        {
+
+            $.getJSON("http://footprintsapp.3eeweb.com/nearby.php" ,function(data)
+
+            {
+
+
+                $.each(data.result , function()
+                {
+
+                    $("#date5").append("<span>"+this['event_day']+"</span>");
+                    $("#month5").append("<span>"+this['event_month']+"</span>");
+                    $("#name5").append("<span>"+this['event_name']+"</span>");
+                    $("#venue5").append("<span>"+this['venue_name']+"</span>");
+                    $("#myrating5").append("<span>"+this['longti']+"</span>");
+                    $("#img5").append('<img src="http://footprintsapp.3eeweb.com/image/image/'+this['image']+'"    width="100%" height="100%"/>');
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+
+
+    <div  style="width: 95%; margin-left: 10px; margin-right: 10px;" class="card rich-card">
+
+        <div  class="card-hero" id="img5">
+
+            <h1 id="name5" ><br><span id="venue5" style="color: red;"></span><br></h1>
+        </div>
+        <div class="divider"></div>
+        <div class="card-footer">
+            <span id="date5" class="date" style="margin-left: 20px;"></span><br>
+            <span id="month5" style="margin-left: 20px; padding-right:20px; color: red;"></span>
+            <button  onclick="moreInfo(); " class="button flat color-orange-500">Interested</button>
+
+
+
+
+
+            <script>
+                function serchevent() {
+                    window.location="search.html";
+                }
+
+            </script>
+
+
+
+
+
+
+            <button   onclick="serchevent();"style="position:fixed; z-index:11; right:0px; bottom:0; margin:20px; padding:5 px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" class="fab bg-blue-700 color-white  btn modal-trigger"><i class="icon-search"></i></button>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    </div>
+
+
+<script>
+    function reload(){
+    window.location.reload(true);
+        }
+</script>
+
+
+
+
+
+
+<!--  Scripts-->
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/custom1.js"></script>
+
+<script src="js/materialize.min.js"></script>
+<script src="js/material.js"></script>
+<script src="demo-files/demo.js"></script>
+
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src='js/waves.min.js'></script>
+<script src="js/indexx.js"></script>
+
+
+</body>
+</html>

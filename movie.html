@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Parallax Template - Materialize</title>
+
+
+
+
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:400'>
+    <link rel='stylesheet prefetch' href='css/waves.min.css'>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/stylee.css">
+
+
+
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+
+    <script>
+        function back() {
+            window.location="index.html";
+        }
+
+    </script>
+
+
+</head>
+<body>
+<script src="js/jquery-1.12.3.min.js"></script>
+
+
+
+<div  style="background-color:#000066;" class="toolbar bg-blue-500 color-white">
+    <a href="#" class="button-collapse"> <button style="color:white;" class="icon-button" id="" class="button color-blue-500" onclick="back();"><i class="icon-arrow-back"></i></button></a>
+    <span class="toolbar-label">At the Theatres</span>
+				<span class="float-right">
+
+                    <button class="icon-button"><i class="icon-more-vertical"></i></button></span>
+
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+        <li   onclick="logout();"><a style="color:#000066;" href="#">Logout</a></li>
+    </ul>
+</div>
+<script>
+
+    $(document).ready(function()
+    {
+
+        $.getJSON("http://footprintsapp.3eeweb.com/movie.php" ,function(data)
+
+        {
+
+
+            $.each(data.result , function()
+            {
+
+                $("#date22").append("<span>"+this['event_day']+"</span>");
+                $("#month22").append("<span>"+this['event_month']+"</span>");
+                $("#name22").append("<span>"+this['event_name']+"</span>");
+                $("#venue22").append("<span>"+this['venue_name']+"</span>");
+                $("#details22").append("<span>"+this['event_detail']+"</span>");
+                $("#img22").append('<img src="http://footprintsapp.3eeweb.com/image/image/'+this['image']+'"    width="100%" height="100%"/>');
+
+            });
+
+        });
+
+    });
+
+
+
+</script>
+
+
+<div style="margin: 10px; height: 300px;" class="card small">
+    <div id="img22" class="card-image waves-effect waves-block waves-light">
+
+    </div>
+    <div class="card-content">
+        <span id="name22" class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+        <p><a href="#">Interested</a></p>
+    </div>
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Details<i class="material-icons right">close</i></span>
+
+        <p id="details22"></p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--  Scripts-->
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="js/custom.js"></script>
+
+<script src="js/materialize.min.js"></script>
+<script src="js/material.js"></script>
+<script src="demo-files/demo.js"></script>
+
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src='js/waves.min.js'></script>
+<script src="js/indexx.js"></script>
+
+
+</body>
+</html>

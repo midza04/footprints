@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Footprints</title>
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="demo-files/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Material Framework is an easy to use Material Design Framework for the web.">
+    <meta charset="utf-8"/>
+
+
+
+</head>
+
+<body>
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1713760518912838',
+            xfbml      : true,
+            version    : 'v2.6'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<div  style="background-color:#000066;" class="toolbar bg-blue-500 color-white">
+    <button class="icon-button" id="sidemenu-button" class="button color-blue-500" onclick="eventPage();"><i class="icon-arrow-back"></i></button>
+    <span class="toolbar-label">Register</span>
+				<span class="float-right">
+					<button class="icon-button"><i class="icon-more-vertical"></i></button>
+				</span>
+</div>
+
+
+<form id="myForm" method="post" action="register.php" class="text-input-container">
+    <i class="icon-location text-input-icon"></i>
+    <input type="text" class="text-input border-green-500" placeholder="Name"/><br>
+
+    <i class="icon-location text-input-icon"></i>
+    <input type="text" class="text-input border-green-500" placeholder="Surname"/><br>
+
+    <i class="icon-location text-input-icon"></i>
+    <input type="text" class="text-input border-green-500" placeholder="Username"/><br>
+
+    <i class="icon-location text-input-icon"></i>
+    <input type="password" class="text-input border-green-500" placeholder="Password"/><br>
+
+    <button id="sub" class="button">Submitt</button>
+
+
+
+</form>
+
+
+
+
+
+
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/material.js"></script>
+<script src="demo-files/demo.js"></script>
+
+
+<script src="js/custom.js"></script>
+<script src="js/materialize.min.js"></script>
+
+<script type="text/javascript">
+
+    function eventPage() {
+        window.location="eventinfo.html";
+    }
+
+</script>
+
+</body>
+
+
+</html>

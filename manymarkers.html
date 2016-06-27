@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Searchbox</title>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="demo-files/demo.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Material Framework is an easy to use Material Design Framework for the web.">
+    <meta charset="utf-8"/>
+    <script src="js/material.js"></script>
+    <script src="demo-files/demo.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js" async></script>
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+    <script src="js/custom.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+
+
+        function eventPage() {
+            window.location="index.html";
+        }
+    </script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+            background: transparent url(img/default.gif) no-repeat center center;
+        }
+        .controls {
+            margin-top: 10px;
+            border: 1px solid transparent;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #pac-input {
+            background-color: #fff;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 12px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 300px;
+        }
+
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+
+        .pac-container {
+            font-family: Roboto;
+        }
+
+        #type-selector {
+            color: #fff;
+            background-color: #4d90fe;
+            padding: 5px 11px 0px 11px;
+        }
+
+        #type-selector label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+        }
+        #target {
+            width: 345px;
+        }
+    </style>
+</head>
+<body>
+<div  style="background-color:#000066;" class="toolbar bg-blue-500 color-white">
+    <button class="icon-button" id="sidemenu-button" class="button color-blue-500" onclick="eventPage();"><i class="icon-arrow-back"></i></button>
+    <span class="toolbar-label">Maps</span>
+				<span class="float-right">
+					<button class="icon-button"><i class="icon-more-vertical"></i></button>
+				</span>
+</div>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+<script src="http://www.google.com/jsapi?key=ABQIAAAAlJFc1lrstqhgTl3ZYo38bBQcfCcww1WgMTxEFsdaTsnOXOVOUhTplLhHcmgnaY0u87hQyd-n-kiOqQ"></script>
+<script>
+    function initMap() {
+
+        var broadway = {
+            info: '<strong>Chipotle on Broadway</strong><br>\
+					5224 N Broadway St<br> Chicago, IL 60640<br>\
+					<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+            lat: 41.976816,
+            long: -87.659916
+        };
+
+        var belmont = {
+            info: '<strong>Chipotle on Belmont</strong><br>\
+					1025 W Belmont Ave<br> Chicago, IL 60657<br>\
+					<a href="https://goo.gl/maps/PHfsWTvgKa92">Get Directions</a>',
+            lat: 41.939670,
+            long: -87.655167
+        };
+
+        var sheridan = {
+            info: '<strong>Chipotle on Sheridan</strong><br>\r\
+					6600 N Sheridan Rd<br> Chicago, IL 60626<br>\
+					<a href="https://goo.gl/maps/QGUrqZPsYp92">Get Directions</a>',
+            lat: 42.002707,
+            long: -87.661236
+        };
+
+        var locations = [
+            [broadway.info, broadway.lat, broadway.long, 0],
+            [belmont.info, belmont.lat, belmont.long, 1],
+            [sheridan.info, sheridan.lat, sheridan.long, 2],
+        ];
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: new google.maps.LatLng(41.976816, -87.659916),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow({});
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+    }
+</script>
+</body>
+</html>

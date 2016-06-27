@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Places Searchbox</title>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="demo-files/demo.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Material Framework is an easy to use Material Design Framework for the web.">
+    <meta charset="utf-8"/>
+    <script src="js/material.js"></script>
+    <script src="demo-files/demo.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js" async></script>
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+    <script src="js/custom.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+
+
+        function eventPage() {
+            window.location="index.html";
+        }
+    </script>
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+            background: transparent url(img/default.gif) no-repeat center center;
+        }
+        .controls {
+            margin-top: 10px;
+            border: 1px solid transparent;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #pac-input {
+            background-color: #fff;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 12px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 300px;
+        }
+
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+
+        .pac-container {
+            font-family: Roboto;
+        }
+
+        #type-selector {
+            color: #fff;
+            background-color: #4d90fe;
+            padding: 5px 11px 0px 11px;
+        }
+
+        #type-selector label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+        }
+        #target {
+            width: 345px;
+        }
+    </style>
+</head>
+<body>
+<div  style="background-color:#000066;" class="toolbar bg-blue-500 color-white">
+    <button class="icon-button" id="sidemenu-button" class="button color-blue-500" onclick="eventPage();"><i class="icon-arrow-back"></i></button>
+    <span class="toolbar-label">Maps</span>
+				<span class="float-right">
+					<button class="icon-button"><i class="icon-more-vertical"></i></button>
+				</span>
+</div>
+<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<div id="map"></div>
+<script>
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
+
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+    var loc = new google.maps.LatLng(coords.latitude, coords.longitude);
+    var map = new google.maps.Map(document.getElementById("map"), {
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: loc,
+        zoom: 13
+    });
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5lOHi5zAkQDNej5919RrhY_UyahhcJEQ&libraries=places&callback=initAutocomplete"
+        async defer></script>
+</body>
+</html>

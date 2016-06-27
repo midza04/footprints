@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Parallax Template - Materialize</title>
+
+
+
+
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Lato:400'>
+    <link rel='stylesheet prefetch' href='css/waves.min.css'>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/stylee.css">
+
+
+
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+
+</head>
+<body>
+<script src="js/jquery-1.12.3.min.js"></script>
+
+<script type="text/javascript">
+
+    $(function() {
+
+        $(".search_button").click(function() {
+            // getting the value that user typed
+            var searchString    = $("#search_box").val();
+            // forming the queryString
+            var data            = 'search='+ searchString;
+
+            // if searchString is not empty
+            if(searchString) {
+                // ajax call
+                $.ajax({
+                    type: "POST",
+                    url:"http://localhost:81/footprintss/search.php" ,
+                    data: data,
+                    beforeSend: function(html) { // this happens before actual call
+                        $(".midza").html('');
+                        $("#searchresults").show();
+                        $(".word").html(searchString);
+                    },
+                    success: function(html){ // this happens after we get results
+                        $(".midza").show();
+                        $(".midza").append("<ul id='results' class='update'><li>" +this['event_name']+ "</li></ul>" );
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>
+
+<div id="container">
+    <div style="margin:20px auto; text-align: center;">
+        <form method="post" action="http://localhost:81/footprintss/search.php">
+            <input type="text" name="search" id="search_box" class='search_box'/>
+            <input type="submit" value="Search" class="search_button" /><br />
+        </form>
+    </div>
+    <div>
+
+        <div id="searchresults">Search results :</div>
+        <div class="midza">
+
+
+
+
+
+            </div>
+
+
+    </div>
+</div>
+
+<!--  Scripts-->
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="js/custom.js"></script>
+
+<script src="js/materialize.min.js"></script>
+<script src="js/material.js"></script>
+<script src="demo-files/demo.js"></script>
+
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src='js/waves.min.js'></script>
+<script src="js/indexx.js"></script>
+
+
+</body>
+</html>

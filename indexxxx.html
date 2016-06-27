@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Footprints</title>
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+	<link rel="stylesheet" href="css/material.css"/>
+	<link rel="stylesheet" href="css/material.css"/>
+	<link rel="stylesheet" href="demo-files/demo.css"/>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="Material Framework is an easy to use Material Design Framework for the web.">
+	<meta charset="utf-8"/>
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+	<script src="js/material.js"></script>
+    <script src="demo-files/demo.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+	<script src="js/custom.js"></script>
+	<script src="js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+
+		function eventPage() {
+			window.location="eventinfo.html";
+		}
+
+	</script>
+
+
+
+</head>
+
+<body>
+<div id="preloader"></div>
+<script src="js/jquery.min.js"  type="text/javascript"></script>
+
+
+
+
+<div  style="background-color:#000066;" class="toolbar bg-blue-500 color-white">
+				<button class="icon-button"><i class="icon-menu"></i></button>
+				<span class="toolbar-label">FootPrints</span>
+				<span class="float-right">
+					<button class="icon-button"><i class="icon-star"></i></button>
+
+				</span>
+			</div>
+			<ul  style="background-color: #000066;"class="toolbar tabs bg-blue-500 color-white">
+				<li style="width:33,3%;" ripple="" class="selected"><a href="#toolbars">Places</a></li>
+				<li style="width:33,3%;" ripple=""><a href="events.html">Events</a></li>
+				<li style="width:33,3%;" ripple=""><a href="checkin.html">Check In</a></li>
+			</ul>
+
+
+
+<div class="followMeBar"><span class="thatimage"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;"></span><span style="margin-left:10px;"> Shopping Mall</span></div>
+
+  <div onclick="eventPage();"class="container">
+
+  <img src="img/images.jpg"  style="width:100%">
+
+  <div   class="tag" style="background-color: black; width: 100%;"><label id="mylabels" class="bottomleft"></label></div>
+  <label id="myrating" class="bottomright">4.8</label>
+  </div>
+  <div class="myicons" style="  background-color : #80ccff;">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button onclick="directions();" class="icon-button"><i class="icon-location-searching"></i></button>
+      <script>
+          function directions() {
+              window.location="currentpos.html";
+          }
+      </script> <script>
+
+      $(document).ready(function()
+      {
+pl
+          $.getJSON("http://footprintsapp.3eeweb.com/json.php" ,function(data)
+
+          {
+
+              $("#mylabels").empty();
+              $("#myrating").empty();
+
+
+
+
+
+
+
+
+              $.each(data.result , function()
+              {
+
+                  $("#mylabels").append("<label>"+this['place_name']+"</label>");
+                  $("#myrating").append("<label>"+this['lat']+"<label>");
+              });
+
+          });
+
+      });
+
+
+  </script>
+
+	<button onclick="toast();" id="button"  class="icon-button"><i class="icon-favorite-outline"></i></button>
+
+      <script>
+          function toast() {
+
+              Materialize.toast('You Like this place', 4000) // 4000 is the duration of the toast
+          }
+          </script>
+	</span>
+	<span class="float-right">
+
+
+	<button class="icon-button"><i class="icon-more-vertical"></i></button>
+	<script>
+	       var change = document.getElementById("button");
+		   change.style.background-color="red";
+	</script>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;"><span style="margin-left:10px;">University</span></div>
+
+	 <div  onclick="eventPage();" class="container">
+
+	 <script>
+
+$(document).ready(function()
+{
+
+    $.getJSON("http://localhost:81/footprintss/json2.php" ,function(data)
+
+    {
+
+        $("#mylabel").empty();
+        $("#myratin").empty();
+
+        $.each(data.result , function()
+        {
+
+            $("#mylabel").append("<label>"+this['name']+"</label>");
+            $("#myratin").append("<label>"+this['lati']+"<label>");
+        });
+
+        });
+
+    });
+
+	</script>
+
+  <img src="img/p3.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft" id="mylabel"> Harare Institute of technology</label>
+  <label class="bottomright" id="myratin">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+	<div class="like">
+	<i style="margin-left: 10px;text-decoration: none;"class="icon-star-rate">1,200 likes</i>
+	</div>
+
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div onclick="eventPage();" class="container">
+  <img  src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+	<div class="like">
+	<i style="margin-left: 10px;text-decoration: none;"class="icon-star-rate">Review</i>
+	</div>
+
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div onclick="eventPage();" class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div onclick="eventPage();" class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+	</div>
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Leisure</div>
+  <div class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+	</div>
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+	</div>
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+	</div><div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+	</div>
+	<div class="followMeBar"><img height="25px" width="25px"src="img/mili.png" style="border-radius: 400px; margin-top:0px;">Shopping Mall</div>
+  <div class="container">
+  <img src="img/images.jpg" alt="Norway" style="width:100%">
+  <label class="bottomleft"> Longcheng Plaza</label>
+  <label class="bottomright">4.8</label>
+  </div>
+  <div class="myicons">
+  <span style="clear:right" class="float-left">
+    <button class="icon-button"><i class="icon-bookmark-outline"></i></button>
+	<button class="icon-button"><i class="icon-location-searching"></i></button>
+	<button onclick class="icon-button"><i class="icon-favorite-outline"></i></button>
+	</span>
+	<span class="float-right">
+
+
+	<button  onclick="myclick" class="icon-button"><i class="icon-more-vertical"></i></button>
+
+
+    </span>
+	</div>
+	<hr style="width:100%; color: lavender; opacity: 0.3;margin-left: 10px; margin-right:10px;">
+
+
+
+	<button  onclick="currentposPage();"style="position:fixed; z-index:11; right:0px; bottom:0; margin:20px; padding:5 px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" class="fab bg-blue-700 color-white"><i class="icon-place"></i></button>
+	 <script type="text/javascript">
+
+		function currentposPage() {
+			window.location="find.html";
+		}
+	</script>
+
+	<style>
+
+	</style>
+
+<script>
+var stickyHeaders = (function() {
+
+  var $window = $(window),
+      $stickies;
+
+  var load = function(stickies) {
+
+    if (typeof stickies === "object" && stickies instanceof jQuery && stickies.length > 0) {
+
+      $stickies = stickies.each(function() {
+
+        var $thisSticky = $(this).wrap('<div class="followWrap" />');
+
+        $thisSticky
+            .data('originalPosition', $thisSticky.offset().top)
+            .data('originalHeight', $thisSticky.outerHeight())
+              .parent()
+              .height($thisSticky.outerHeight());
+      });
+
+      $window.off("scroll.stickies").on("scroll.stickies", function() {
+		  _whenScrolling();
+      });
+    }
+  };
+
+  var _whenScrolling = function() {
+
+    $stickies.each(function(i) {
+
+      var $thisSticky = $(this),
+          $stickyPosition = $thisSticky.data('originalPosition');
+
+      if ($stickyPosition <= $window.scrollTop()) {
+
+        var $nextSticky = $stickies.eq(i + 1),
+            $nextStickyPosition = $nextSticky.data('originalPosition') - $thisSticky.data('originalHeight');
+
+        $thisSticky.addClass("fixed");
+
+        if ($nextSticky.length > 0 && $thisSticky.offset().top >= $nextStickyPosition) {
+
+          $thisSticky.addClass("absolute").css("top", $nextStickyPosition);
+        }
+
+      } else {
+
+        var $prevSticky = $stickies.eq(i - 1);
+
+        $thisSticky.removeClass("fixed");
+
+        if ($prevSticky.length > 0 && $window.scrollTop() <= $thisSticky.data('originalPosition') - $thisSticky.data('originalHeight')) {
+
+          $prevSticky.removeClass("absolute").removeAttr("style");
+        }
+      }
+    });
+  };
+
+  return {
+    load: load
+  };
+})();
+
+$(function() {
+  stickyHeaders.load($(".followMeBar"));
+});
+</script>
+
+</body>
+
+
+</html>

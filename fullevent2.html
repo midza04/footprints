@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <title>Footprints</title>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="css/materialize.min.css"/>
+    <link rel="stylesheet" href="css/material.css"/>
+    <link rel="stylesheet" href="demo-files/demo.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Material Framework is an easy to use Material Design Framework for the web.">
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script src="js/material.js"></script>
+    <script src="demo-files/demo.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js" async></script>
+    <link rel="stylesheet" type="text/css" href="css/customstyle.css"/>
+    <script src="js/custom.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <script type="text/javascript">
+
+
+        function eventPage() {
+            window.location="events.html";
+        }
+    </script>
+
+</head>
+<body>
+<style>
+    .imageWrapper  img{
+        transform-origin: 20% 80%;
+        transition: transform 30s linear;
+    }
+    .imageWrapper.zoom{
+        transform: scale(2);
+    }
+
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes zoom {
+        from {
+            -webkit-transform: scale(1,1);
+        }
+        to {
+            -webkit-transform: scale(1.5,1.5);
+        }
+    }
+
+    /* Standard syntax */
+    @keyframes zoom {
+        from {
+            transform: scale(1,1);
+        }
+        to {
+            transform: scale(1.5,1.5);
+        }
+    }
+
+
+    img {
+        -webkit-animation: zoom 50s; /* Chrome, Safari, Opera */
+        animation: zoom 50s;
+    }
+
+</style>
+
+<script>
+
+
+    $(document).ready(function()
+    {
+
+        $.getJSON("http://footprintsapp.3eeweb.com/eventjson2.php" ,function(data)
+
+        {
+            $("#venuename2").empty();
+            $("#ticketprice2").empty();
+            $("#details").empty();
+
+            $.each(data.result , function()
+            {
+
+                $("#venuename2").append("<label>"+this['venue_name']+"</label>");
+                $("#ticketprice2").append("<label>$"+this['ticket_price']+"</label>");
+                $("#details2").append("<span>"+this['event_detail']+"</span>");
+                $(".imagecontainer2").append('<img src="http://footprintsapp.3eeweb.com/image/image/'+this['image']+'"    width="100%" height="50%"/>');
+
+
+            });
+
+        });
+
+    });
+
+</script>
+
+<script>
+    setTimeout(function(){
+        window.location.reload(1);
+    }, 5000);
+</script>
+
+<div class="imageWrapper" style="position: relative; width: 100%; clear: both;">
+    <div class="imagecontainer2">
+
+        <i class="icon-arrow-back"onclick="eventPage(); " style=" color: white; position: fixed;left:10px; top: 10px;z-index: 10;"></i>
+        <i class="icon-search"onclick="eventPage(); " style=" color: white; position: absolute;left:90%; top: 10px;z-index: 10;"></i>
+        <label style="z-index: 10;" class="bottomright">4.8</label>
+
+    </div>
+</div>
+<div class="venueinfo2">
+    <label style="color: #00ccff; font-size: 16px;" class="vname"  >VENUE NAME</label><br>
+    <h4 id="venuename2">--</h4>
+    <label style="color: #00ccff; font-size: 14px;" class="tprice">TICKET PRICE</label><br>
+    <div style="display: inline;">
+        <label id="ticketprice2" style="font-size: 22px; margin-right: 20%; color: black;">--</label>
+        <a href="http://www.eventbrite.com"> <button class="button raised bg-blue-500 color-white">BUY TICKET</button><br></a>
+    </div>
+    <label style="color: #00ccff;font-size: 14px;"class="vabout">ABOUT</label><br>
+    <p id="details"> ---</p>
+    <br><br>
+</div>
+
+
+<script>
+
+    $(document).ready(function(){
+        $("button").click(function(){
+            $(".venueinfo").hide();
+        });
+    });
+</script>
+
+
+<button  onclick="currentposPage();"style="position:fixed; z-index:11; right:60px; bottom:0; margin:20px; padding:5 px;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" class="fab bg-red-500 color-white small"><i class="icon-favorite-outline"></i></button>
+</body>
